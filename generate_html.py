@@ -28,7 +28,7 @@ if __name__ == '__main__':
 
     datas = []
     for entry in UrandomizationStorage().get_urandomizations():
-    	datas.append({
+        datas.append({
             "startTime": str(entry.start_time),
             "stopTime": str(entry.stop_time),
             "totalTime": str(entry.stop_time - entry.start_time),

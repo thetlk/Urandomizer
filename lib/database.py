@@ -5,6 +5,7 @@ import peewee
 
 db = peewee.SqliteDatabase(None)
 
+
 class BaseModel(peewee.Model):
     class Meta:
         database = db
@@ -20,6 +21,7 @@ class Urandomization(BaseModel):
 
     def __str__(self):
         return "Urandomization(start_time=%s, byte_count=%s, from=%s:%d)" % (self.start_time, self.byte_count, self.ip_address, self.port)
+
 
 class BaseStorage(object):
 
@@ -39,6 +41,7 @@ class UrandomizationStorage(BaseStorage):
 
     def get_urandomizations(self):
         return Urandomization.select()
+
 
 def setup_db(filepath):
     db.init(filepath)

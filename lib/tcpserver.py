@@ -7,6 +7,7 @@ import SocketServer
 
 from lib.database import UrandomizationStorage
 
+
 class UrandomServerHandler(SocketServer.BaseRequestHandler):
 
     block_size = 8192
@@ -59,6 +60,7 @@ class UrandomServerHandler(SocketServer.BaseRequestHandler):
                 str(stop_time - start_time)
             )
         )
+
 
 class ThreadedTCPServer(SocketServer.ThreadingMixIn, SocketServer.TCPServer):
     pass
